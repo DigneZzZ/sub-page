@@ -204,9 +204,9 @@
                 "dataUsage": "Использовано: ",
                 "expirationDate": "Действителен до: ",
                 "resetIntervalDay": "(Сбрасывается ежедневно)",
-                "resetIntervalWeek": "(Сбрасывается каждую неделю)",
-                "resetIntervalMonth": "(Сбрасывается каждый месяц)",
-                "resetIntervalYear": "(Сбрасывается каждый год)",
+                "resetIntervalWeek": "(Сбрасывается еженедельно)",
+                "resetIntervalMonth": "(Сбрасывается ежемесячно)",
+                "resetIntervalYear": "(Сбрасывается ежегодно)",
                 "remainingDays": "Осталось: ",
                 "remainingDaysSufix": " дней",
                 "links": "Ссылки",
@@ -277,7 +277,7 @@
                                 </div>
                             </div>
                             <div class="dark:text-white text-black mt-3 text-sm text-center" x-text="resetInterval == 'year' ? $t('resetIntervalYear') : resetInterval == 'month' ? $t('resetIntervalMonth') : resetInterval == 'week' ? $t('resetIntervalWeek') : resetInterval == 'day' ? $t('resetIntervalDay') : ''"></div>
-                            <div class="dark:text-white text-black mt-10 text-center"><span class="font-bold" x-text="$t('expirationDate')"></span><span dir="ltr" x-data="{expireDate: ''}" x-init="Alpine.data( 'expireDate', expireDate = expireDateVar )" x-text="expireDate"></span></div><!--2023/06/31 10:43:59-->
+                            <div class="dark:text-white text-black mt-5 text-center"><span class="font-bold" x-text="$t('expirationDate')"></span><span dir="ltr" x-data="{expireDate: ''}" x-init="Alpine.data( 'expireDate', expireDate = expireDateVar )" x-text="expireDate"></span></div><!--2023/06/31 10:43:59-->
                             <div class="dark:text-white text-black mt-5 text-center"><span class="font-bold" x-text="$t('remainingDays')"></span><span>{% if not user.expire %}∞{% else %}{% set remaining_days = ((user.expire - now().timestamp()) // (24 * 3600)) %}({{ remaining_days | int if (remaining_days | int) > -1 else 0 }}){% endif %}</span><span x-text="$t('remainingDaysSufix')"></span></div>
                         </div>
                     </div>
