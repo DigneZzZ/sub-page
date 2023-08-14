@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -276,8 +276,8 @@
                                     <span class="absolute w-full left-0" x-text="`${width}%`"></span>
                                 </div>
                             </div>
-                            <div class="dark:text-white text-black mt-10 text-center"><span class="font-bold" x-text="$t('expirationDate')"></span><span dir="ltr" x-data="{expireDate: ''}" x-init="Alpine.data( 'expireDate', expireDate = expireDateVar )" x-text="expireDate"></span></div><!--2023/06/31 10:43:59-->
                             <div class="dark:text-white text-black mt-3 text-sm text-center" x-text="resetInterval == 'year' ? $t('resetIntervalYear') : resetInterval == 'month' ? $t('resetIntervalMonth') : resetInterval == 'week' ? $t('resetIntervalWeek') : resetInterval == 'day' ? $t('resetIntervalDay') : ''"></div>
+                            <div class="dark:text-white text-black mt-10 text-center"><span class="font-bold" x-text="$t('expirationDate')"></span><span dir="ltr" x-data="{expireDate: ''}" x-init="Alpine.data( 'expireDate', expireDate = expireDateVar )" x-text="expireDate"></span></div><!--2023/06/31 10:43:59-->
                             <div class="dark:text-white text-black mt-5 text-center"><span class="font-bold" x-text="$t('remainingDays')"></span><span>{% if not user.expire %}∞{% else %}{% set remaining_days = ((user.expire - now().timestamp()) // (24 * 3600)) %}({{ remaining_days | int if (remaining_days | int) > -1 else 0 }}){% endif %}</span><span x-text="$t('remainingDaysSufix')"></span></div>
                         </div>
                     </div>
