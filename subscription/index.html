@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ user.username }} - Информация по подписке</title>
+    <title>{{ user.username }} - Подписка</title>
     <link href="https://cdn.jsdelivr.net/gh/MuhammadAshouri/marzban-templates@master/template-01/build.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
@@ -197,29 +197,29 @@
                 "support": "Telegram Support"
             },
             "ru": {
-                "active": "активный",
-                "limited": "ограниченный",
-                "expired": "истекший",
-                "disabled": "не активный",
-                "dataUsage": "Использование данных: ",
-                "expirationDate": "Дата окончания срока: ",
-                "resetIntervalDay": "(сбрасывает каждый день)",
-                "resetIntervalWeek": "(сбрасывается каждую неделю)",
-                "resetIntervalMonth": "(сбрасывается каждый месяц)",
-                "resetIntervalYear": "(сбрасывается каждый год)",
-                "remainingDays": "оставшиеся дни: ",
-                "remainingDaysSufix": " дни",
-                "links": "ссылки",
+                "active": "Активен",
+                "limited": "Ограничен",
+                "expired": "Просрочен",
+                "disabled": "Отключен",
+                "dataUsage": "Использовано: ",
+                "expirationDate": "Истекает: ",
+                "resetIntervalDay": "(Сбрасывается ежедневно)",
+                "resetIntervalWeek": "(Сбрасывается еженедельно)",
+                "resetIntervalMonth": "(Сбрасывается ежемесячно)",
+                "resetIntervalYear": "(Сбрасывается ежегодно)",
+                "remainingDays": "Осталось: ",
+                "remainingDaysSufix": " дней",
+                "links": "Ссылки",
                 "apps": "Программы",
-                "tutorials": "инструкции",
-                "subscription": "подписка",
-                "language": "язык",
-                "settings": "настройки",
-                "darkMode": "тёмный режим",
-                "copyAll": "скопировать все",
-                "proxy": "прокси",
-                "tutorial": "руководство",
-                "download": "скачать",
+                "tutorials": "Инструкции",
+                "subscription": "Подписка",
+                "language": "Язык",
+                "settings": "Настройки",
+                "darkMode": "Тёмная тема",
+                "copyAll": "Скопировать все",
+                "proxy": "Прокси",
+                "tutorial": "Руководство",
+                "download": "Скачать",
                 "support": "Поддержка телеграмм"
             }
         };
@@ -276,8 +276,8 @@
                                     <span class="absolute w-full left-0" x-text="`${width}%`"></span>
                                 </div>
                             </div>
-                            <div class="dark:text-white text-black mt-10 text-center"><span class="font-bold" x-text="$t('expirationDate')"></span><span dir="ltr" x-data="{expireDate: ''}" x-init="Alpine.data( 'expireDate', expireDate = expireDateVar )" x-text="expireDate"></span></div><!--2023/06/31 10:43:59-->
                             <div class="dark:text-white text-black mt-3 text-sm text-center" x-text="resetInterval == 'year' ? $t('resetIntervalYear') : resetInterval == 'month' ? $t('resetIntervalMonth') : resetInterval == 'week' ? $t('resetIntervalWeek') : resetInterval == 'day' ? $t('resetIntervalDay') : ''"></div>
+                            <div class="dark:text-white text-black mt-5 text-center"><span class="font-bold" x-text="$t('expirationDate')"></span><span dir="ltr" x-data="{expireDate: ''}" x-init="Alpine.data( 'expireDate', expireDate = expireDateVar )" x-text="expireDate"></span></div><!--2023/06/31 10:43:59-->
                             <div class="dark:text-white text-black mt-5 text-center"><span class="font-bold" x-text="$t('remainingDays')"></span><span>{% if not user.expire %}∞{% else %}{% set remaining_days = ((user.expire - now().timestamp()) // (24 * 3600)) %}({{ remaining_days | int if (remaining_days | int) > -1 else 0 }}){% endif %}</span><span x-text="$t('remainingDaysSufix')"></span></div>
                         </div>
                     </div>
